@@ -4,3 +4,6 @@
 *.db
 .vscode
 rmutil/test_vector
+
+.idea
+.DS_Store

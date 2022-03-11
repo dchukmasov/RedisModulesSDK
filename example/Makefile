@@ -26,8 +26,8 @@ all: rmutil module.so
 rmutil: FORCE
 	$(MAKE) -C $(RMUTIL_LIBDIR)
 
-module.so: module.o
-	$(LD) -o $@ module.o $(SHOBJ_LDFLAGS) $(LIBS) -L$(RMUTIL_LIBDIR) -lrmutil -lc 
+module.so: module.o decNumber.o decContext.o
+	$(LD) -o $@ module.o decNumber.o decContext.o $(SHOBJ_LDFLAGS) $(LIBS) -L$(RMUTIL_LIBDIR) -lrmutil -lc
 
 clean:
 	rm -rf *.xo *.so *.o
